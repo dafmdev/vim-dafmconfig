@@ -10,7 +10,6 @@ set nowrap  " No dividir la línea si es muy larga
 set encoding=utf-8 " Permitir caracteres internacionales
 set cursorline " Me permite tener el curso en formato de linea
 
-set cursorline  " Resalta la línea actual
 set colorcolumn=120  " Muestra la columna límite a 120 caracteres
 
 " Indentación a 4 espacios
@@ -33,13 +32,14 @@ set nocompatible
 set termguicolors  " Activa true colors en la terminal
 highlight ColoColum ctermbg=0 guibg=lightgrey
 
+
 " MAPPINGS DE DANIEL
 
 let g:mapleader = ' '  " Definir espacio como la tecla líder
 
 "Use F5 to refresh your editor with the config file that you specify here
-nmap <F5> :source ~/.config/nvim/init.vim<CR>
-vmap <F5> :source ~/.config/nvim/init.vim<CR>
+nmap <F5> :source %<CR>
+vmap <F5> :source %<CR>
 
 nnoremap <leader>w :w<CR>  " Guardar con <líder> + s
 nnoremap <leader>q :q<CR>  " Guardar con <líder> + s
@@ -67,10 +67,10 @@ nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprevious<CR>
 
 " Cerrar el buffer actual con <líder> + q
-nnoremap <leader>q :bdelete<CR>
+nnoremap <leader>de :bdelete<CR>
 
 " Tree
-nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <leader>b :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
@@ -123,3 +123,49 @@ highlight Normal ctermbg=NONE
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 nmap <leader>f <Plug>(easymotion-s2)
 let g:EasyMotion_smartcase = 1
+let g:lightline = {}
+let g:lightline.colorscheme = 'gruvbox'
+
+
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+"
+let g:closetag_filetypes = 'html,xhtml,phtml'
+
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" dict
+" Disables auto-close if not in a "valid" region (based on filetype)
+"
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
