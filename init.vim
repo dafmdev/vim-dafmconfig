@@ -9,6 +9,7 @@ set noerrorbells " No sonidos de error
 set nowrap  " No dividir la línea si es muy larga
 set encoding=utf-8 " Permitir caracteres internacionales
 set cursorline " Me permite tener el curso en formato de linea
+set clipboard=unnamed
 
 set colorcolumn=120  " Muestra la columna límite a 120 caracteres
 
@@ -125,7 +126,9 @@ nmap <leader>f <Plug>(easymotion-s2)
 let g:EasyMotion_smartcase = 1
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
-
+if exists("g:loaded_webdevicons")
+    call webdevicons#refresh()
+endif
 
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
@@ -167,5 +170,5 @@ let g:closetag_regions = {
 let g:closetag_shortcut = '>'
 
 " Add > at current position without closing the current tag, default is ''
-"
+
 let g:closetag_close_shortcut = '<leader>>'
