@@ -71,10 +71,7 @@ nnoremap <leader>h :bprevious<CR>
 nnoremap <leader>de :bdelete<CR>
 
 " Tree
-nnoremap <leader>b :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <leader>b :NERDTreeToggle<CR>
 
 
 " PLUGINS
