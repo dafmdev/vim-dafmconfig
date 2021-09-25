@@ -125,9 +125,7 @@ nmap <leader>f <Plug>(easymotion-s2)
 let g:EasyMotion_smartcase = 1
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
-if exists("g:loaded_webdevicons")
-    call webdevicons#refresh()
-endif
+
 
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
@@ -171,3 +169,10 @@ let g:closetag_shortcut = '>'
 " Add > at current position without closing the current tag, default is ''
 
 let g:closetag_close_shortcut = '<leader>>'
+
+
+" vim-devicon
+if exists("g:loaded_webdevicons")
+    call webdevicons#refresh()
+endif
+
