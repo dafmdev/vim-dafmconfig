@@ -107,6 +107,7 @@ Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdcommenter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'easymotion/vim-easymotion'
+Plug 'editorconfig/editorconfig-vim'
 
 " themes
 Plug 'morhetz/gruvbox'
