@@ -44,6 +44,8 @@ vmap <F5> :source %<CR>
 
 nnoremap <leader>w :w<CR>  " Guardar con <líder> + s
 nnoremap <leader>q :q<CR>  " Guardar con <líder> + s
+nnoremap <leader>j 10j<CR>
+nnoremap <leader>k 10k<CR>
 
 nnoremap <leader>e :e $MYVIMRC<CR>  " Abrir el archivo init.vim con <líder> + e
 
