@@ -111,6 +111,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 " themes
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 
@@ -119,7 +120,7 @@ call plug#end()
 
 set background=dark
 let g:gruvbox_cotrast_dark="hard"
-colorscheme gruvbox
+colorscheme dracula
 highlight Normal ctermbg=NONE
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 nmap <leader>f <Plug>(easymotion-s2)
